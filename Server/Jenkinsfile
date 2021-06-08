@@ -10,6 +10,7 @@ pipeline {
                 nodejs('NodeJS'){
                     sh 'npm --version'
                     sh 'npm install'
+                    sh 'nodemon index.js'
                 }
             }
         }

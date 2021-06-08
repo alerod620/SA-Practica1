@@ -3,12 +3,15 @@ $(document).ready(function(){
     $('#btnSend').click(function(){
 
         var errores = '';
+        var nombre = '';
 
         // Validado Nombre ==============================
         if( $('#names').val() == '' ){
             errores += '<p>Escriba un nombre</p>';
             $('#names').css("border-bottom-color", "#F14B4B")
         } else{
+            nombre = $('#names').val();
+            console.log('El nombre ingresado es ' + nombre);
             $('#names').css("border-bottom-color", "#d1d1d1")
         }
 
@@ -36,9 +39,13 @@ $(document).ready(function(){
                                         errores+
                                         '<span id="btnClose">Cerrar</span>'+
                                     '</div>'+
-                                '</div>'
+                                '</div>'    
 
             $('body').append(mensajeModal);
+        }
+        else
+        {
+            verificar(nombre);
         }
 
         // CERRANDO MODAL ==============================
@@ -46,5 +53,12 @@ $(document).ready(function(){
             $('.modal_wrap').remove();
         });
     });
+
+    async function verificar(nombre){
+        var v = await fetch(`http://localhost:3000/Verificar/${nombre}`)
+            .then(response => response.json())
+            .then(data => {return data})
+        alert(v);
+    }
 
 });

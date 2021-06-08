@@ -1,0 +1,21 @@
+{
+  "name": "orden",
+  "version": "1.0.0",
+  "description": "Servidor",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chai": "^4.3.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mocha": "^8.3.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
+  }
+}

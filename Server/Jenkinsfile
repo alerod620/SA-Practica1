@@ -1,6 +1,8 @@
 pipeline {
     agent any
 
+    tools {nodejs "nodejs"}
+
     stages {
         stage('Build') {
             steps {
@@ -8,7 +10,7 @@ pipeline {
                 nodejs('NodeJS'){
                     sh 'npm --version'
                     sh 'npm install'
-                    sh 'node index.js'
+                    sh 'nodemon index.js'
                 }
             }
         }

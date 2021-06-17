@@ -6,7 +6,6 @@ pipeline {
             steps {
                 echo 'Building...'
                 nodejs('node'){
-                    sh 'cd Server'
                     sh 'npm install'
                     sh 'node index.js'
                 }

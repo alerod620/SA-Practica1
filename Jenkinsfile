@@ -7,7 +7,7 @@ pipeline {
                 echo 'Building...'
                 nodejs('node'){
                     sh 'npm install'
-                    sh 'node index.js'
+                    //sh 'node index.js'
                 }
             }
         }

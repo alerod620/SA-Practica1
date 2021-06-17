@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                nodejs('NodeJS'){
+                nodejs('node'){
                     sh 'npm --version'
                     sh 'node index.js'
                 }
@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                nodejs('NodeJS'){
+                nodejs('node'){
                     sh 'npm test'
                 }
             }
